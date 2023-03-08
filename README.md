@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### To Clone
 
-git clone https://github.com/Shreyash019/React-ToDo.git
+`git clone https://github.com/Shreyash019/React-ToDo.git`
 
 ### To run the application
 
