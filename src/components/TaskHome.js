@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ShowTask from './ShowTask';
+import './task.css';
 
 const TaskHome = () => {
 
@@ -7,7 +8,7 @@ const TaskHome = () => {
   const [cnt, setCnt] = useState(1)
   const [task, setTask] = useState({
     name: '',
-    status: '',
+    summary: '',
     id:0
   });
 
@@ -46,20 +47,37 @@ const TaskHome = () => {
 
   return (
     <>
-      <div>
-        <div>
+      <div className='task-container'>
+        <h2>React ToDo</h2>
+        <div className='task-form'>
           <form onSubmit={formSubmit}>
-            <input type="text" name="name" value={task.name} onChange={handleOnChange} placeholder="Task"/><br/>
-            <input type="text" name="status" value={task.status} onChange={handleOnChange} placeholder="Status"/><br/>
+            <input type="text" name="name" value={task.name} onChange={handleOnChange} placeholder="Task"/>
+            <input type="text" name="summary" value={task.status} onChange={handleOnChange} placeholder="Summary"/>
             <button>Submit</button>
           </form>
         </div>
       </div>
-      {
-        tasks.map((task, index)=>{
-          return <ShowTask key={task.id} task={task} removeTask={removeTask} updateTask={updateTask}/>
-        })
-      }
+      <div className='show-container'>
+        {/* <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Summary</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+
+        </table> */}
+          {
+            tasks.map((task, index)=>{
+              return <ShowTask key={task.id} task={task} removeTask={removeTask} updateTask={updateTask}/>
+            })
+          }
+      </div>
+
     </>
   )
 }

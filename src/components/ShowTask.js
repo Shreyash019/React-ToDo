@@ -1,29 +1,30 @@
-import React from 'react'
+import React from 'react';
+import './task.css';
+import {FaRegCheckSquare, FaTrashAlt} from "react-icons/fa";
 
-const ShowTask = ({task, updateTask, removeTask}) => {
+const ShowTask = ({task, removeTask}) => {
 
   const taskOnClick = (e) =>{
     e.preventDefault();
+  }
+
+  const taskToCompleted = (e)=>{
+    e.preventDefault();
+    removeTask(task.id);
+    alert('Task completed.')
   }
 
   const taskToRemove = (e)=>{
     e.preventDefault();
     removeTask(task.id);
   }
-  
-  const taskToUpdate = (e)=>{
-    e.preventDefault();
-    updateTask(task.id);
-  }
 
   return (
-    <div onClick={taskOnClick}>
-      <ul>
-        <li>{task.name}</li>
-        <li>{task.status}</li>
-        <button onClick={taskToUpdate}>Update Task</button>
-        <button onClick={taskToRemove}>Remove</button>
-      </ul>
+    <div className='show-task-details' onClick={taskOnClick}>
+        <h5>{task.name}</h5>
+        <textarea value={task.summary} readOnly>{task.summary}</textarea>
+        <p><button onClick={taskToCompleted} style={{backgroundColor:"green"}}><FaRegCheckSquare class="icon-style" style={{backgroundColor:"green", color: "white"}}/></button></p>
+        <p><button onClick={taskToRemove} style={{backgroundColor:"red"}}><FaTrashAlt class="icon-style" style={{backgroundColor:"red", color: "white"}}/></button></p>
     </div>
   )
 }

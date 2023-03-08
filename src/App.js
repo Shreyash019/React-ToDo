@@ -4,7 +4,7 @@ import TaskHome from './components/TaskHome';
 function App() {
   return (
     <>
-      <TaskHome/>
+      <TaskHome/> 
     </>
   );
 }
