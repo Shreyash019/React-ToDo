@@ -4,11 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Tech stack: React, JavaScript, HTML, CSS.
 
-### To Clone
+#### To Clone
 
 `git clone https://github.com/Shreyash019/React-ToDo.git`
 
-### To run the application
+#### To run the application
 
 `npm run start`
 
