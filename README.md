@@ -1,6 +1,6 @@
 # React ToDo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is simple react todo list created using javascript object.
 
 ### Tech stack: React, JavaScript, HTML, CSS.
 
